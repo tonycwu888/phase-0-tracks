@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Mike and Tony form</title>
+  </head>
+  <body>
+
+    <form action="success.html" method="post">
+      <br><br>
+      First name:<br>
+      <input type="text" name="firstname"><br>
+      Last name:<br>
+      <input type="text" name="lastname">
+      <br><br>
+      <div>
+        <label>Email:</label>
+        <input type="email" name="email">
+      </div>
+
+      <div>
+        <label>Password:</label>
+        <input type="password" name="password">
+      </div>
+      <br>
+        <label>Love selections</label>
+      <select name="select">
+          <option value="selection1" selected>I love you</option>
+          <option value="selection2" >I love you more</option>
+          <option value="selection3">I love you the most</option>
+          <option value="selection4">I I hate you</option>
+        </select>
+    <br><br>
+      <label>What are you</label> <br>
+        <input type="radio" name="gender" value="male" checked> Male<br>
+        <input type="radio" name="gender" value="female"> Female<br>
+        <input type="radio" name="gender" value="other"> unknown<br>
+
+<br><br>
+      <label>Tell us what you want us to do?</label> <br>
+        <textarea name="suggestions" rows="5" cols="40">Give us some suggestions </textarea>
+
+<br>
+      <button type="submit">Submit</button>
+
+    </form>
+
+  </body>
+</html>
