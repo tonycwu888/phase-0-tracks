@@ -1,0 +1,22 @@
+img#body {
+        position:absolute;
+        margin-left: 100px;
+         top:200px;
+         left:100px;
+         z-index:1;"
+}
+
+img#hat {
+         position:relative;
+
+         top:110px;
+         left:37px;
+         z-index:3;"
+}
+img#glasses {
+
+        position:relative;
+         top:175px;
+         left:233px;
+         z-index:2;"
+}
