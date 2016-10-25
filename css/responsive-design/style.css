@@ -13,12 +13,9 @@ cite {
   list-style-type: none;
   padding-left: 0px;
 }
-
-/* you're welcome to edit the
-image, figure, and figcaption CSS if you'd like, 
-but it's optional! */
 img {
   width: 100%;
+  margin: 0px auto;
 }
 
 figure {
@@ -29,4 +26,33 @@ figure {
 figcaption {
   font-style: italic;
   text-align: right;
+}
+body {
+  max-width: 960px;
+  min-width: 400px;
+}
+section#external-links {
+  position: fixed;
+  width: 15%;
+  min-width: 100px;
+  display: inline-block;
+  vertical-align: top;
+}
+main {
+  margin-left: 20%;
+  width: 75%;
+  min-width: 300px;
+  display: inline-block;
+  vertical-align: middle;
+
+}
+
+@media screen and (max-width: 400px) {
+  section#external-links   {
+    font-size: 9px;
+  }
+  main {
+    font-size: 9px;
+    font-weight: bolder;
+  }
 }
