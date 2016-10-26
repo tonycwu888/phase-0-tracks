@@ -16,8 +16,9 @@ end
 vol_lev = vol_lev.to_i
 ham_age = ham_age.to_i
 
-puts "Hamster Name: #{ham_name}"
-puts "Hamster Noise Level (1-10): #{vol_lev}"
+
+puts "Hamster's Name: #{ham_name}"
+puts "Hamster's Noise Level (1-10): #{vol_lev}"
 puts "Fur Color: #{fur_color}"
 puts "Adoptability: #{adoptability}"
 puts "Hamster Age: #{ham_age}"
