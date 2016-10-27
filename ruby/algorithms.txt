@@ -1,0 +1,28 @@
+Release 0 (robot algorithm)
+**robot is preset with program to recognize numeric numbers, the alphabet and basic shapes
+**the robot has just been completed by the engineers on the 3rd floor and he needs to get to the 18th floor for a demo
+Alright Mr. Robo, roll over to the elevator (with sliding doors and 2 buttons "up arrow and down arrow")
+1. When you a sliding door with an triangle pointing up and one pointing down.
+  --depress the triangle pointing up
+  --wait for doors to open, wait for people to exit if any prior to entering the double doors.
+  --after all people have exited the rectangular box, proceed to enter, if door start to close up on you, lift arm in between doors to keep it from closing
+  --after entering the rectangular box, locate the numeric number 18 on a button and press on it
+  --if doors don't close right away, press the button with the following symbol "> <" to expedite the door closing
+    --after the door closes, monitor each number the rectangular box is stopping at.
+    --do not exit the rectangular box until it stops at the number 18
+    --when the rectangular box stops at the number 18, proceed to exit the door.
+    --you have arrived at your floor for your introduction demo (congratulations!)
+
+
+
+Release 1 (real life algorithm)
+Making Breakfast
+--open refrigerator
+  if there's eggs, make omelette
+  --if there's no eggs and there's milk
+     eat milk and cereal for breakfast
+  --if there's no milk and there's cream cheese
+      goto pantry and look for bagel
+        ---if there's bagel, eat cream cheese with bagel
+    --if there's nothing in the fridge
+    --go to work starving and wait for lunch
