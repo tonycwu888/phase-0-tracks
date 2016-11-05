@@ -7,7 +7,7 @@
 p "iNvEsTiGaTiOn".swapcase
 # => “InVeStIgAtIoN”
 
-p "zom".<???>
+p "zom".insert(2, 'o')
 # => “zoom”
 
 p "enhance".center(15)
@@ -25,7 +25,7 @@ p " suspects".insert(-10, 'the usual')
 p "The case of the disappearing last letter".chop
 # => "The case of the disappearing last lette"
 
-"The mystery of the missing first letter".delete[0]
+p "The mystery of the missing first letter".reverse.chop.reverse
 # => "he mystery of the missing first letter"
 
 p "Elementary,    my   dear        Watson!".squeeze
@@ -36,5 +36,5 @@ p "z".ord
 # (What is the significance of the number 122 in relation to the character z?)
 # ascii for the letter z
 
-"How many times does the letter 'a' appear in this string?".count "a"
+p "How many times does the letter 'a' appear in this string?".count "a"
 # => 4
