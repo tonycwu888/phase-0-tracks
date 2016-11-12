@@ -51,7 +51,7 @@ class Santa
         santa_age = @age.rand(140)
         puts "========== NEW Santa ============="
         puts "This santa is #{santa_age} years old."
-        #generate random gender
+        #generate random gender and ethnicity
         puts "He/She/It is a part of the (#{@gender.sample}) gender."
         puts "He/She/It is a/an #{@ethnicity.sample}."
         puts "============ end ================="
