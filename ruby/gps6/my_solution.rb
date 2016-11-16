@@ -4,8 +4,8 @@
 # We spent [#] hours on this challenge.
 
 # EXPLANATION OF require_relative
-#
-#
+# when using require, you must use absolute path, and when using require_relative
+# you don't have to type out file name with extention
 require_relative 'state_data'
 
 class VirusPredictor
