@@ -71,7 +71,15 @@ sqlite> insert into review (stars, comments, business_id, user_id) values (0, "v
 sqlite> insert into review (stars, comments, business_id, user_id) values (5, "excellent", 1, 1);
 sqlite> .exit
 
-
+sqlite> select * from businesses, users, review where businesses.id=review.business_id, users.id=review.user_id;
+Error: near ",": syntax error
+sqlite> select * from businesses, users, review where businesses.id=review.business_id and users.id=review.user_id;
+5|Plumbing by Janet|3|Angela|Jolie|1|4|good|5|3
+3|The Beagle Nightclub|3|Angela|Jolie|2|1|poor|3|3
+4|Lotus Yoga|5|Holly|Berry|3|0|very poor|4|5
+1|Grundy Hollow Wedding Chapel|1|Bradford|Pitt|4|5|excellent|1|1
+sqlite> select * from businesses, users, review where businesses.id=review.business_id and users.id=review.user_id and businesses.name="Lotus Yoga";
+4|Lotus Yoga|5|Holly|Berry|3|0|very poor|4|5
 
 
 
