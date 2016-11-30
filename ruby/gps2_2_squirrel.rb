@@ -46,7 +46,10 @@ def remove_item(groceries_hash, item_name)
     if groceries_hash.include?(item_name)
         groceries_hash.delete(item_name)
     else
-        puts "ERROR: Item not found."
+        puts "******************"
+        puts "ERROR: (#{item_name}) is not in your grocery list."
+        puts "******************"
+        return
     end
     puts ""
     puts "Here is your updated grocery list with the (#{item_name}) removed:"
@@ -78,4 +81,5 @@ groceries_hash = {
 
 create_list(groceries_hash)
 remove_item(groceries_hash, "Lemonade")
+remove_item(groceries_hash, "ice tea")
 update_quantity(groceries_hash, "Ice Cream", 1)
