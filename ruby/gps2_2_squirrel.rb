@@ -30,56 +30,108 @@
 # input: hash
 # steps: go through each key in the hash, print key & qty (Lemonade, Qty: 3)
 # output: prints a string, returns nil
+#
+# def create_list(groceries_hash)
+#     print_list(groceries_hash)
+# end
+#
+# def add_item(groceries_hash, item_name, qty=1)
+#     groceries_hash[item_name] = qty
+#     puts ""
+#     puts "Here is your updated grocery list with the (#{item_name}) added:"
+#     print_list(groceries_hash)
+# end
+#
+# def remove_item(groceries_hash, item_name)
+#     if groceries_hash.include?(item_name)
+#         groceries_hash.delete(item_name)
+#     else
+#         puts "******************"
+#         puts "ERROR: (#{item_name}) is not in your grocery list."
+#         puts "******************"
+#         return
+#     end
+#     puts ""
+#     puts "Here is your updated grocery list with the (#{item_name}) removed:"
+#     print_list(groceries_hash)
+# end
+#
+# def update_quantity(groceries_hash, item_name, qty)
+#     groceries_hash[item_name] = qty
+#     puts ""
+#     puts "Here is a revision with the number of (#{item_name}) updated:"
+#     print_list(groceries_hash)
+# end
+#
+# def print_list(groceries_hash)
+#     puts ""
+#     puts "==== Grocery List ======"
+#     groceries_hash.each do |item, qty|
+#         puts "#{item} - Qty: #{qty}"
+#     end
+#     puts "========================"
+# end
+#
+# groceries_hash = {
+#     "Lemonade" => 2,
+#     "Tomatoes" => 3,
+#     "Onions" => 1,
+#     "Ice Cream" => 4
+# }
+#
+# create_list(groceries_hash)
+# remove_item(groceries_hash, "Lemonade")
+# remove_item(groceries_hash, "ice tea")
+# update_quantity(groceries_hash, "Ice Cream", 1)
+#
 
-def create_list(groceries_hash)
-    print_list(groceries_hash)
-end
-
-def add_item(groceries_hash, item_name, qty=1)
-    groceries_hash[item_name] = qty
-    puts ""
-    puts "Here is your updated grocery list with the (#{item_name}) added:"
-    print_list(groceries_hash)
-end
-
-def remove_item(groceries_hash, item_name)
-    if groceries_hash.include?(item_name)
-        groceries_hash.delete(item_name)
-    else
-        puts "******************"
-        puts "ERROR: (#{item_name}) is not in your grocery list."
-        puts "******************"
-        return
+def create_list(groceries_string)
+    groceries_array = groceries_string.split(" ")
+    groceries_hash = {}
+    groceries_array.each do |item|
+        groceries_hash[item] = 1
     end
-    puts ""
-    puts "Here is your updated grocery list with the (#{item_name}) removed:"
     print_list(groceries_hash)
+    groceries_hash
 end
-
+def add_item(groceries_hash, item_name, qty=1)
+  groceries_hash[item_name] = qty
+  puts "\nHere is your updated grocery list with #{qty} (#{item_name}) added:"
+  print_list(groceries_hash)
+end
+def remove_item(groceries_hash, item_name)
+  if groceries_hash.include?(item_name)
+    groceries_hash.delete(item_name)
+    puts "\nHere is your updated grocery list with the (#{item_name}) removed:"
+    print_list(groceries_hash)
+  else
+    puts "\n******************"
+    puts "ERROR: (#{item_name}) is not in your grocery list."
+    puts "******************"
+  end
+end
 def update_quantity(groceries_hash, item_name, qty)
+  if groceries_hash.include?(item_name)
     groceries_hash[item_name] = qty
-    puts ""
-    puts "Here is a revision with the number of (#{item_name}) updated:"
+    puts "\nHere is a revision with the number of (#{item_name}) updated:"
     print_list(groceries_hash)
+  else
+    puts "\n******************"
+    puts "ERROR: (#{item_name}) is not in your grocery list."
+    puts "******************"
+  end
 end
-
 def print_list(groceries_hash)
-    puts ""
-    puts "==== Grocery List ======"
+    puts "\n==== Groceries List ======"
     groceries_hash.each do |item, qty|
-        puts "#{item} - Qty: #{qty}"
+      puts "#{item} - Qty: #{qty}"
     end
     puts "========================"
 end
-
-groceries_hash = {
-    "Lemonade" => 2,
-    "Tomatoes" => 3,
-    "Onions" => 1,
-    "Ice Cream" => 4
-}
-
-create_list(groceries_hash)
-remove_item(groceries_hash, "Lemonade")
-remove_item(groceries_hash, "ice tea")
-update_quantity(groceries_hash, "Ice Cream", 1)
+groceries = "Lemonade Tomatoes Onions Apples"
+groceries = create_list(groceries)
+add_item(groceries, "Cereal")
+add_item(groceries, "Bananas", 5)
+remove_item(groceries, "Lemonade")
+remove_item(groceries, "Ice Tea")
+update_quantity(groceries, "Apples", 1)
