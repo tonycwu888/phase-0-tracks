@@ -22,8 +22,8 @@ end
 santas = []
 example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
 example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
-weight = [200, 198, 250, 205, 220, 210, 300]
+weights = [200, 198, 250, 205, 220, 210, 300]
 example_genders.length.times do |i|
-  santas << Santa.new(example_genders[i], example_ethnicities[i], weight[i])
+  santas << Santa.new(example_genders[i], example_ethnicities[i], weights[i])
   puts santas
 end
