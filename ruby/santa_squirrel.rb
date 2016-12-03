@@ -17,6 +17,30 @@ class Santa
     puts "That was a good #{cookie} cookie!"
   end
 
+  def celebrate_birthday
+    @age += 1
+    puts "Happy Birthday Santa, you are now #{@age} years old!"
+  end
+
+  def get_mad_at(reindeer)
+    puts "Original Ranks #{@reindeer_ranking}"
+    @reindeer_ranking.delete_if {|ranking| ranking == reindeer}
+    @reindeer_ranking.push reindeer
+    puts "New Ranks #{@reindeer_ranking}"
+  end
+
+  def gender=(gender)
+    @gender = gender
+  end
+
+  def age
+    @age
+  end
+
+  def ethnicity
+    @ethnicity
+  end
+
 end
 
 santas = []
@@ -27,3 +51,9 @@ example_genders.length.times do |i|
   santas << Santa.new(example_genders[i], example_ethnicities[i], weights[i])
   puts santas
 end
+santas = Santa.new("agender", "white", 200)
+santas.celebrate_birthday
+santas.get_mad_at("Vixen")
+p santas.age
+p santas.gender = "Latina"
+p santas.ethnicity
