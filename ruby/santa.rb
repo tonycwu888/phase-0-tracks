@@ -102,6 +102,9 @@ reindeer = Santa.new("new gender","crazy")
 reindeer.gender
 
 #*******Release 4 (do the thing)******
-
+santa_hash = {}
 santa = Santa.new(example_genders, example_ethnicities)
-santa.create_santa(10000)
+santa_hash [santa.gender] = santa.ethnicity
+p santa_hash
+
+#santa.create_santa(10)
