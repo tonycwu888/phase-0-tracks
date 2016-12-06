@@ -5,7 +5,7 @@
 # include data from other file, access methods within that file
 # just "require" would need to have the absolute path, "relative" means
 # that is in the same folder
-require_relative 'state_data'
+require_relative 'state_data_squirrel'
 class VirusPredictor
 
   # Takes three parameters and sets instance variables
@@ -50,8 +50,7 @@ class VirusPredictor
   #   print "#{@state} will lose #{number_of_deaths} people in this outbreak"
   # end
   # Estimates speed of spread based on population density by state
-  def speed_of_spread
-    #in months
+  def speed_of_spread  #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
     speed = 0.0
@@ -97,3 +96,10 @@ end
 
 #=======================================================================
 # Reflection Section
+#different hash symbols: ("key state" => "value")  (key: "value")
+  #string keys are used when more than one word in key, key seperated by : is easier reading
+#require_relative allows the current class to access all methods from the require_relative file
+  #require is usually for accessing gem files/ruby files and would require absolute path to the files
+#iterating through hash -- you can use, .each, .each_key, .each_value
+#data was being passed into every method, but it's not neccessary because, it was already passed in witht he initialize method
+#this asssignment solidified my understanding of iterating over hash and passing of data from one method to another.
