@@ -13,3 +13,7 @@ function reverseString(input) {
 }
 
 var newReversedString = reverseString("hello there");
+
+if (newReversedString.length > 1) {
+  console.log(newReversedString);
+}
