@@ -1,0 +1,27 @@
+COMMNAD:
+SELECT users.first_name, users.last_name, businesses.name, reviews.stars, reviews.comment 
+FROM users JOIN reviews on users.id = reviews.user_id 
+JOIN businesses on businesses.id = reviews.business_id;
+
+OUTPUT:
+first_name  last_name   name                          stars       comment
+----------  ----------  ----------------------------  ----------  -----------------
+Bradford    Pitt        Grundy Hollow Wedding Chapel  5           Awesome services!
+Angela      Jolie       Amir's Towing                 3           So so stuff
+Mandy       Kaling      Grundy Hollow Wedding Chapel  1           So so BADDDDD
+Bradford    Pitt        The Beagle Nightclub          4           Delightful stuff
+
+
+
+
+COMMAND:
+SELECT users.first_name, users.last_name, businesses.name, reviews.stars, reviews.comment 
+FROM users INNER JOIN reviews on users.id = reviews.user_id 
+INNER JOIN businesses on businesses.id = reviews.business_id 
+WHERE reviews.business_id = 1;
+
+OUTPUT:
+first_name  last_name   name                          stars       comment
+----------  ----------  ----------------------------  ----------  -----------------
+Bradford    Pitt        Grundy Hollow Wedding Chapel  5           Awesome services!
+Mandy       Kaling      Grundy Hollow Wedding Chapel  1           So so BADDDDD
