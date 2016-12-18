@@ -1,0 +1,23 @@
+command:
+SELECT * FROM students;
+
+output: 
+id          name          grades      good
+----------  ------------  ----------  ----------
+1           jonny b good  98          true
+2           molly b bad   68          false
+3           holly soso    72          false
+4           Billy Bob     88          true
+
+
+command:
+sqlite> UPDATE students SET grades=78 WHERE name="holly soso";
+
+output:
+id          name          grades      good
+----------  ------------  ----------  ----------
+1           jonny b good  98          true
+2           molly b bad   68          false
+3           holly soso    78          false
+4           Billy Bob     88          true
+
