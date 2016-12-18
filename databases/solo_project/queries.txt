@@ -1,0 +1,83 @@
+command:
+SELECT * FROM students;
+
+output: 
+id          name          grades      good
+----------  ------------  ----------  ----------
+1           jonny b good  98          true
+2           molly b bad   68          false
+3           holly soso    72          false
+4           Billy Bob     88          true
+
+
+command:
+UPDATE classes SET student_id=4, teacher_id=1 WHERE name="Physics";
+
+output:
+id          name        student_id  teacher_id
+----------  ----------  ----------  ----------
+1           Biology     1           2
+2           Math        2           3
+3           English     1           4
+4           Physics     4           1
+
+command:
+SELECT * FROM students JOIN classes on students.id = student_id;
+
+output:
+id          name          grades      good        id          name        student_id  teacher_id
+----------  ------------  ----------  ----------  ----------  ----------  ----------  ----------
+1           jonny b good  98          true        1           Biology     1           2
+2           molly b bad   68          false       2           Math        2           3
+1           jonny b good  98          true        3           English     1           4
+4           Billy Bob     88          true        4           Physics     4           1
+
+command:
+SELECT students.name, students.grades, classes.name FROM students JOIN classes on students.good="true" and classes.name="Biology";
+
+output:
+name          grades      name
+------------  ----------  ----------
+jonny b good  98          Biology
+Billy Bob     88          Biology
+
+command:
+DELETE FROM students WHERE name="molly b bad";
+
+output:
+id          name          grades      good
+----------  ------------  ----------  ----------
+1           jonny b good  98          true
+3           holly soso    78          false
+4           Billy Bob     88          true
+
+command:
+SELECT students.name, students.grades, teachers.name, classes.name FROM students, teachers JOIN classes on students.good="true" and classes.name="Biology";
+
+output:
+name        grades      name         name
+----------  ----------  -----------  ----------
+Billy Bob   88          Mrs. Fisher  Biology
+jonny b go  98          Mrs. Fisher  Biology
+Billy Bob   88          Mr. Downer   Biology
+jonny b go  98          Mr. Downer   Biology
+Billy Bob   88          Mr. Jones    Biology
+jonny b go  98          Mr. Jones    Biology
+Billy Bob   88          Mrs. Burnt   Biology
+jonny b go  98          Mrs. Burnt   Biology
+
+command:
+SELECT teachers.name, classes.name FROM teachers INNER JOIN classes on teachers.id = classes.id;
+
+output:
+name         name
+-----------  ----------
+Mrs. Fisher  Biology
+Mr. Downer   Math
+Mr. Jones    English
+Mrs. Burnt   Physics
+
+
+https://www.tutorialspoint.com/sqlite/sqlite_using_joins.htm
+
+sqlite3 seems to only support JOIN, INNER JOIN and LEFT JOINS
