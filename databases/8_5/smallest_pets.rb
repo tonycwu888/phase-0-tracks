@@ -10,7 +10,7 @@
   => display "thank you for using our pet inventory"
 =end
 require 'sqlite3'
-
+require 'faker'
 
 
 db = SQLite3::Database.new('smallest_pets.db')
@@ -26,3 +26,34 @@ create_table = <<-SQLite3
   SQLite3
 
 db.execute(create_table)
+
+def add_new_item(db, name, color, age, fury)
+  db.execute("INSERT INTO pets (name, color, age, fury) VALUES (?, ?, ?, ?)", [name, color, age, fury])
+  #puts db.execute("SELECT * FROM pets")
+end
+
+def update_item(db, item_to_update, new_value, name)
+  if item_to_update == "color"
+    db.execute("UPDATE pets SET #{item_to_update}='#{new_value}' WHERE name='#{name}'")
+  elsif item_to_update == "age"
+    db.execute("UPDATE pets SET #{item_to_update}=#{new_value} WHERE name='#{name}'")
+  else
+    puts "Sorry, you have either entered an invalid item or we are not able to update this item at this point."
+  end
+end
+
+def remove_item(db, name)
+  db.execute("DELETE FROM pets WHERE name='#{name}'")
+end
+
+# 10000.times do
+#   fury = ['true', 'false']
+#   add_new_item(db, Faker::Name.name, Faker::Commerce.color, rand(1..5), fury.sample)
+# end
+
+
+update_item(db, "dingdong", "2", "Krystal Bode")
+
+
+puts ""
+#puts db.execute("SELECT * FROM pets")
