@@ -72,14 +72,16 @@ case selection
     puts "We only allow updates on the (color) and (age) in the inventory, please let us know what you would like to update."
     puts "Please use the format below, name of pet, item you would like to update, and the new value of the item."
     puts "Sample entry: Jonny, age, 5"
-    temp_update = gets.chomp.downcase
+    temp_update = gets.chomp
     temp_arry = temp_update.split(', ')
     update_item(db, temp_arry[0], temp_arry[1], temp_arry[2])
     puts db.execute("SELECT * FROM pets")
   when 3
     puts "Please enter the name of the pet to delete."
+    puts "Sample entry: Jonny B Good"
+    remove_item = gets.chomp.to_s
+    remove_item(db, remove_item)
+    puts db.execute("SELECT * FROM pets")
   when 4
     puts "Thank you for using our pet inventory."
 end
-
-puts db.execute("SELECT * FROM pets")
