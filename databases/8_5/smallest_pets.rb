@@ -32,7 +32,7 @@ def add_new_item(db, name, color, age, fury)
   #puts db.execute("SELECT * FROM pets")
 end
 
-def update_item(db, item_to_update, new_value, name)
+def update_item(db, name, item_to_update, new_value)
   if item_to_update == "color"
     db.execute("UPDATE pets SET #{item_to_update}='#{new_value}' WHERE name='#{name}'")
   elsif item_to_update == "age"
@@ -52,24 +52,34 @@ end
 # end
 
 
-update_item(db, "dingdong", "2", "Krystal Bode")
-
-
 puts "We have over 10,000 smallest pets in our inventory.  Please let us know what you would like to do with the inventory."
 puts "Enter (1) -- if you would like to add a pet."
 puts "Enter (2) -- if you would like to update a pet's information."
 puts "Enter (3) -- if you would like to delete a pet from the system."
 puts "Enter (4) -- if you would like to exit the system."
 
-selection = gets.chomp
+selection = gets.chomp.to_i
 
-case
-  when selection = 1
+case selection
+  when 1
     puts "Please enter the pets (name, color, age, 'true' if it's fury, and 'false' if it's not fury)."
     puts "Sample entry: (Jonny cutie, blue, 5, true)"
     add_item = gets.chomp
     temp_arry = add_item.split(', ')
     add_new_item(db, temp_arry[0], temp_arry[1], temp_arry[2], temp_arry[3])
+    puts db.execute("SELECT * FROM pets")
+  when 2
+    puts "We only allow updates on the (color) and (age) in the inventory, please let us know what you would like to update."
+    puts "Please use the format below, name of pet, item you would like to update, and the new value of the item."
+    puts "Sample entry: Jonny, age, 5"
+    temp_update = gets.chomp.downcase
+    temp_arry = temp_update.split(', ')
+    update_item(db, temp_arry[0], temp_arry[1], temp_arry[2])
+    puts db.execute("SELECT * FROM pets")
+  when 3
+    puts "Please enter the name of the pet to delete."
+  when 4
+    puts "Thank you for using our pet inventory."
 end
 
 puts db.execute("SELECT * FROM pets")
