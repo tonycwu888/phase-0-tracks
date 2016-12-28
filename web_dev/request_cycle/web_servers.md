@@ -22,3 +22,20 @@ Virtual private servers are servers that are in a remote location (cloud).  Inte
 <h2>Why shouldn't you work on the root directory</h2>
 
 There are conflicting information in my findings.  I think some proficient linux/unix users (old timers), do use the root directory for some of their task.  I don't think it's a good idea, especially for us beginners to be using the root directory for any task because it can cause major headaches if we do something wrong, it could allow virus, or others to destroy your system if not careful.  It's mostly to prevent people from make unrepairable mistakes and a big security issue.
+
+<h2>Explore the DOM</h2>
+
+There are so many attributes on every little part of code.  Just on simple header alone, there are so many.
+
+<ul>
+<li>bgColor
+<li>onmouseover
+<li>onload
+<li>onclick
+<li>ondblclick
+<li>align
+<li>clientWidth
+<li>clientHeight
+</ul>
+
+There seems to endless amount of attributes fir every line of html tag.
