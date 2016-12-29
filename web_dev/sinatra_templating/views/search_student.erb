@@ -8,5 +8,13 @@
     <input type="text" name="campus" placeholder="Campus">
     <button type="submit">Search</button>
   </form>
+
+ <ul>
+    <% @students.each do |student| %>
+      <li><%= student['name'] %>, <%= student['campus'] %></li>
+    <% end %>
+  </ul> 
+
+
 </body>
 </html>
