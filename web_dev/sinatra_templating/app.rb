@@ -17,6 +17,10 @@ get '/students/new' do
   erb :new_student
 end
 
+get '/students/search' do
+  erb :search_student
+  "search page test"
+end
 # create new students via
 # a form
 post '/students' do
